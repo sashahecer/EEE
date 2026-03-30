@@ -20,9 +20,12 @@
 
 <body>
     <script>
-        document.addEventListener('click', keyDownHandler, false);
-        let points = 0;
+     let points = 0;
+     document.addEventListener('click', handleClick);
+     function handleClick() {
+        points++;
         console.log(points);
+     }
     </script>
 </body>
 
