@@ -33,8 +33,12 @@
         }
         function handleClick() {
             points++;
-            textToCanvas();
         }
+        function gameLoop() {
+            textToCanvas();
+            requestAnimationFrame(gameLoop);
+        }
+        gameLoop();
     </script>
 </body>
 
