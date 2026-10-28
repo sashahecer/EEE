@@ -25,11 +25,11 @@
         const ctx = canvas.getContext('2d');
         let points = 0;
         document.addEventListener('click', handleClick);
-        function drawButton(positionX, positionY) {
+        function drawButton(positionX, positionY, textX, textY, height, width, text) {
             ctx.beginPath();
-            ctx.rect(positionX, positionY, 200, 200);
+            ctx.rect(positionX, positionY, width, height);
             ctx.stroke();
-            ctx.fillText('Click Me', positionX + 50, positionY + 30);
+            ctx.fillText(text, textX, textY);
             ctx.closePath();
         }
         function drawText(positionX, positionY) {
@@ -40,7 +40,8 @@
         function rander() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawText(10, 30);
-            drawButton(canvas.width / 2 - 100, 360);
+            drawButton(canvas.width / 2 - 100, 360, canvas.width / 2 - 50, 400, 200, 200, 'Click Me');
+            drawButton(canvas.width / 2 - 100, 600, canvas.width / 2 - 50, 640, 200, 200, 'Add friend');
         }
         const button = {
                 x: canvas.width / 2 - 100,
